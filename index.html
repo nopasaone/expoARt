@@ -23,8 +23,9 @@
 
   <body>
     <div class="example-container">
-      <a-scene mindar-image="imageTargetSrc: ./assets/targets.mind; showStats: false;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-scene mindar-image="imageTargetSrc: ./assets/prueba_kong.mind; showStats: false;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
+          <video id="kong_anim" src="./assets/VID-20220531-WA0000.mp4" loop="true" autoplay muted="true"></video>
           <video id="zurich" src="./assets/Lake-Zurich.mp4" loop="true" autoplay muted="true"></video>
           <video id="night" src="./assets/Stars.mp4" loop="true" autoplay muted="true"></video>
         </a-assets>
@@ -32,18 +33,20 @@
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
         <a-entity mindar-image-target="targetIndex: 0">
-          <a-plane src="#zurich" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+          <a-plane src="#kong_anim" position="0 0 0" height="0.722" width="1" rotation="0 0 0"></a-plane>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 1">
+        <!-- <a-entity mindar-image-target="targetIndex: 1">
           <a-plane src="#night" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
-        </a-entity>
+        </a-entity> -->
       </a-scene>
       <script>
         window.addEventListener('load', function () {
-        var v = document.querySelector('#zurich');
+          var v3 = document.querySelector('#kong_anim');
+          v3.play();
+        /*var v = document.querySelector('#zurich');
         v.play();
         var v2 = document.querySelector('#night');
-        v2.play();
+        v2.play();*/
         });
     </script>
     </div>
